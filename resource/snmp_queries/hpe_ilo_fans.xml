@@ -1,0 +1,62 @@
+<interface>
+	<name>HPE iLO Fans</name>
+	<description>HPE iLO Fans, tested with iLO 4,5, original from http://relvarsoft.com/cactimon</description>
+	<oid_index>.1.3.6.1.4.1.232.6.2.6.7.1.2</oid_index>
+	<oid_index_parse>OID/REGEXP:.*\.([0-9]{1,2})$</oid_index_parse>
+	<index_order>cpqHeFltTolFanChassis:cpqHeFltTolFanIndex</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<cpqHeFltTolFanIndex>
+			<name>Fan Index</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.7.1.2.0</oid>
+		</cpqHeFltTolFanIndex>
+		<cpqHeFltTolFanChassis>
+			<name>Chassis Number (only =0 supported)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.7.1.1.0</oid>
+		</cpqHeFltTolFanChassis>
+		<cpqHeFltTolFanLocale>
+			<name>Fan Locale (4=systemBoard, 6=cpu, 7=memory, ... more in MIB)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.7.1.3.0</oid>
+		</cpqHeFltTolFanLocale>
+		<cpqHeFltTolFanPresent>
+			<name>Fan Present (1=other, 2=absent, 3=present)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.7.1.4.0</oid>
+		</cpqHeFltTolFanPresent>
+		<cpqHeFltTolFanType>
+			<name>Fan Type (1=other, 2=tachOutput, 3=spinDetect)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.7.1.5.0</oid>
+		</cpqHeFltTolFanType>
+
+		<cpqHeFltTolFanSpeed>
+			<name>Fan Speed (1=other, 2=normal, 3=high)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.7.1.6.0</oid>
+		</cpqHeFltTolFanSpeed>
+		<cpqHeFltTolFanCondition>
+			<name>Fan Condition (1=other, 2=ok, 3=degraded, 4=failed)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.7.1.9.0</oid>
+		</cpqHeFltTolFanCondition>
+	</fields>
+</interface>

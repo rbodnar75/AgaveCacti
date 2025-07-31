@@ -1,0 +1,100 @@
+<query>
+	<name>APC In-Row Group Statistics</name>
+	<description>Collect In-Row Containment Group Information</description>
+	<oid_index>.1.3.6.1.2.1.7.2</oid_index>
+        <oid_index_parse>OID/REGEXP:.*\.([0-9]{1,2})$</oid_index_parse> 
+        <index_order>Index</index_order>
+        <index_order_type>alphabetic</index_order_type>
+
+	<fields>
+		<Index>
+                        <name>Index</name>
+                        <source>index</source>
+                        <direction>input</direction>
+                </Index>
+
+	<unitIdentName>
+		<name>Unit Name</name>
+		<method>walk</method>
+		<source>value</source>
+		<direction>input</direction>
+		<oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.1.2</oid>
+	</unitIdentName>
+
+	<unitIdentID>
+                <name>Unit ID</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.1.1</oid>
+        </unitIdentID>
+
+	<groupUnits>
+                <name>Number of Units</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>input</direction>
+		<oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.3.1</oid>        
+        </groupUnits>
+
+	<groupConfig>
+                <name>Configuration</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.3.2</oid>
+        </groupConfig>
+
+	
+	<groupMaxInlet>
+		<name>Group Maximum Rack Inlet Temp</name>
+		<method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+		<oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.1.3</oid>
+	</groupMaxInlet>
+
+	<groupMinInlet>
+                <name>Group Minimum Rack Inlet Temp</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.1.5</oid>
+        </groupMinInlet>
+
+	<groupCoolDemand>
+                <name>Group Cooling Demand</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.1.7</oid>
+        </groupCoolDemand>
+
+	<groupCoolOutput>
+                <name>Group Cooling Output</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.1.8</oid>
+        </groupCoolOutput>
+
+	<groupStptCool>
+                <name>Group Cooling Setpoint</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.2.1</oid>
+        </groupStptCool>
+
+	<groupStptAir>
+                <name>Group Supply Air Setpoint</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.1.2.3</oid>
+        </groupStptAir>
+
+	</fields>
+
+</query>
+	

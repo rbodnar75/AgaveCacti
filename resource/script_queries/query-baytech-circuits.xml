@@ -1,0 +1,128 @@
+<query>
+        <name>Get BayTech RPC Circuit Statistics</name>
+        <script_path>|path_php_binary| -q  |path_cacti|/scripts/query_baytech_circuits.php</script_path>
+        <arg_prepend>|host_hostname| |host_snmp_community| |host_snmp_version| |host_snmp_port| |host_snmp_timeout| |host_max_oids| "|host_snmp_username|" "|host_snmp_password|" "|host_snmp_auth_protocol|" "|host_snmp_priv_passphrase|" "|host_snmp_priv_protocol|" "|host_snmp_context|"</arg_prepend>
+        <arg_index>index</arg_index>
+        <arg_query>query</arg_query>
+        <arg_get>get</arg_get>
+        <output_delimeter>!</output_delimeter>
+
+        <fields>
+                <index>
+                        <name>RPC ID</name>
+                        <direction>input</direction>
+                        <query_name>index</query_name>
+                </index>
+		<rpcName>
+			<name>RPC Name</name>
+			<direction>input</direction>
+			<query_name>rpcName</query_name>
+		</rpcName>
+		<cktCurrent1>
+			<name>Current 1</name>
+			<direction>output</direction>
+			<query_name>cktCurrent1</query_name>
+		</cktCurrent1>
+		<cktCurrent2>
+			<name>Current 2</name>
+			<direction>output</direction>
+			<query_name>cktCurrent2</query_name>
+		</cktCurrent2>
+		<cktCurrent3>
+			<name>Current 3</name>
+			<direction>output</direction>
+			<query_name>cktCurrent3</query_name>
+		</cktCurrent3>
+		<cktMaxCurrent1>
+			<name>Current Max 1</name>
+			<direction>input</direction>
+			<query_name>cktMaxCurrent1</query_name>
+		</cktMaxCurrent1>
+		<cktMaxCurrent2>
+			<name>Current Max 2</name>
+			<direction>input</direction>
+			<query_name>cktMaxCurrent2</query_name>
+		</cktMaxCurrent2>
+		<cktMaxCurrent3>
+			<name>Current Max 3</name>
+			<direction>input</direction>
+			<query_name>cktMaxCurrent3</query_name>
+		</cktMaxCurrent3>
+		<cktVoltage1>
+			<name>Voltage 1</name>
+			<direction>output</direction>
+			<query_name>cktVoltage1</query_name>
+		</cktVoltage1>
+		<cktVoltage2>
+			<name>Voltage 2</name>
+			<direction>output</direction>
+			<query_name>cktVoltage2</query_name>
+		</cktVoltage2>
+		<cktVoltage3>
+			<name>Voltage 3</name>
+			<direction>output</direction>
+			<query_name>cktVoltage3</query_name>
+		</cktVoltage3>
+		<cktPower1>
+			<name>Power 1</name>
+			<direction>output</direction>
+			<query_name>cktPower1</query_name>
+		</cktPower1>
+		<cktPower2>
+			<name>Power 2</name>
+			<direction>output</direction>
+			<query_name>cktPower2</query_name>
+		</cktPower2>
+		<cktPower3>
+			<name>Power 3</name>
+			<direction>output</direction>
+			<query_name>cktPower3</query_name>
+		</cktPower3>
+		<cktVA1>
+			<name>Volt-Amps 1</name>
+			<direction>output</direction>
+			<query_name>cktVA1</query_name>
+		</cktVA1>
+		<cktVA2>
+			<name>Volt-Amps 2</name>
+			<direction>output</direction>
+			<query_name>cktVA2</query_name>
+		</cktVA2>
+		<cktVA3>
+			<name>Volt-Amps 3</name>
+			<direction>output</direction>
+			<query_name>cktVA3</query_name>
+		</cktVA3>
+		<cktCurrentAlmThresh1>
+			<name>Current Alarm 1</name>
+			<direction>input</direction>
+			<query_name>cktCurrentAlmThresh1</query_name>
+		</cktCurrentAlmThresh1>
+		<cktCurrentAlmThresh2>
+			<name>Current Alarm 2</name>
+			<direction>input</direction>
+			<query_name>cktCurrentAlmThresh2</query_name>
+		</cktCurrentAlmThresh2>
+		<cktCurrentAlmThresh3>
+			<name>Current Alarm 3</name>
+			<direction>input</direction>
+			<query_name>cktCurrentAlmThresh3</query_name>
+		</cktCurrentAlmThresh3>
+		<cktPowerFactor1>
+			<name>Power Factor 1</name>
+			<direction>output</direction>
+			<query_name>cktPowerFactor1</query_name>
+		</cktPowerFactor1>
+		<cktPowerFactor2>
+			<name>Power Factor 2</name>
+			<direction>output</direction>
+			<query_name>cktPowerFactor2</query_name>
+		</cktPowerFactor2>
+		<cktPowerFactor3>
+			<name>Power Factor 3</name>
+			<direction>output</direction>
+			<query_name>cktPowerFactor3</query_name>
+		</cktPowerFactor3>
+        </fields>
+</query>
+

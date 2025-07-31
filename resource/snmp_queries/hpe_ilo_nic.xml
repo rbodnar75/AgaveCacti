@@ -1,0 +1,118 @@
+<interface>
+	<name>HPE iLO NIC stats</name>
+	<description>HPE iLO NIC statistics, tested with iLO 4,5, original from http://relvarsoft.com/cactimon</description>
+	<oid_index>.1.3.6.1.4.1.232.9.2.5.2.1.1</oid_index>
+	<oid_index_parse>OID/REGEXP:.*\.([0-9]{1,2})$</oid_index_parse>
+	<index_order>cpqSm2NicStatsLocation</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+	<fields>
+		<cpqSm2NicStatsLocation>
+			<name>iLo location</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.1</oid>
+		</cpqSm2NicStatsLocation>
+		<cpqSm2NicModel>
+			<name>iLo NIC model</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.1.1.2</oid>
+		</cpqSm2NicModel>
+		<cpqSm2NicModel>
+			<name>iLo NIC MAC</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.1.1.4</oid>
+		</cpqSm2NicModel>
+		<cpqSm2NicIpAddress>
+			<name>iLo NIC IPv4</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.1.1.5</oid>
+		</cpqSm2NicIpAddress>
+		<cpqSm2NicSpeed>
+			<name>iLo NIC speed</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.1.1.9</oid>
+		</cpqSm2NicSpeed>
+		<cpqSm2NicRibFullQualDnsNam>
+			<name>iLo NIC FQDN</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.1.1.14</oid>
+		</cpqSm2NicRibFullQualDnsNam>
+
+		<cpqSm2NicXmitBytes>
+			<name>Tx bytes</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.2</oid>
+		</cpqSm2NicXmitBytes>
+		<cpqSm2NicXmitTotalPackets>
+			<name>Tx packets</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.3</oid>
+		</cpqSm2NicXmitTotalPackets>
+		<cpqSm2NicXmitDiscardPackets>
+			<name>Tx discard packets</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.6</oid>
+		</cpqSm2NicXmitDiscardPackets>
+		<cpqSm2NicXmitErrorPackets>
+			<name>Tx error packets</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.7</oid>
+		</cpqSm2NicXmitErrorPackets>
+
+		<cpqSm2NicRecvBytes>
+			<name>Rx bytes</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.9</oid>
+		</cpqSm2NicRecvBytes>
+		<cpqSm2NicRecvTotalPackets>
+			<name>Rx packets</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.10</oid>
+		</cpqSm2NicRecvTotalPackets>
+		<cpqSm2NicRecvDiscardPackets>
+			<name>Rx discard packets</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.13</oid>
+		</cpqSm2NicRecvDiscardPackets>
+		<cpqSm2NicRecvErrorPackets>
+			<name>Rx error packets</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.14</oid>
+		</cpqSm2NicRecvErrorPackets>
+		<cpqSm2NicRecvUnknownPackets>
+			<name>Rx unknown packets</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.9.2.5.2.1.15</oid>
+		</cpqSm2NicRecvUnknownPackets>
+	</fields>
+</interface>

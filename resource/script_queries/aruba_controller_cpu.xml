@@ -1,0 +1,29 @@
+<query>
+    <name>Aruba CPU Load</name>
+    <description>Collect Aruba CPU Indices and Load</description>
+    <oid_index>.1.3.6.1.4.1.14823.2.2.1.1.1.9.1.3</oid_index>
+    <oid_index_parse>OID/REGEXP:.*\.([0-9]{1,2})$</oid_index_parse> 
+    <index_order>arubaCpuIndex</index_order>
+    <index_order_type>numeric</index_order_type>
+    <fields>
+        <arubaCpuIndex>
+            <name>Aruba CPU Index</name>
+            <source>index</source>
+            <direction>input</direction>
+        </arubaCpuIndex>
+        <arubaCpuDesc>
+            <name>Aruba CPU Description</name>
+            <method>walk</method>
+            <source>value</source>
+            <direction>input</direction>
+            <oid>.1.3.6.1.4.1.14823.2.2.1.1.1.9.1.2</oid>
+        </arubaCpuDesc>
+        <arubaCpuLoad>
+            <name>Aruba CPU Load</name>
+            <method>walk</method>
+            <source>value</source>
+            <direction>output</direction>
+            <oid>.1.3.6.1.4.1.14823.2.2.1.1.1.9.1.3</oid>
+        </arubaCpuLoad>
+    </fields>
+</query>

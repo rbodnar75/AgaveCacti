@@ -1,0 +1,77 @@
+<aiAPRadInfo>
+        <name>Aruba Instant Cluster AP Stats</name>
+        <description>Aruba Instant Cluster AP Stats</description>
+        <oid_index>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.1</oid_index>
+	<oid_index_parse>OID/REGEXP:^.*\.14823\.2\.3\.3\.1\.2\.1\.1\.[0-9]{1,3}\.(.*)$</oid_index_parse>
+        <index_order>aiAPSerialNum</index_order>
+        <index_order_type>alphabetic</index_order_type>
+ 	<index_title_format>|chosen_order_field|</index_title_format>
+        <fields>
+                <aiAPMACAddress>
+                        <name>AP MAC</name>
+                        <method>walk</method>
+                        <output_format>hex</output_format>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.1</oid>
+		</aiAPMACAddress>
+                <aiAPName>
+                        <name>AP Name</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.2</oid>
+		</aiAPName>
+                <aiAPModelName>
+                        <name>AP Type</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.6</oid>
+		</aiAPModelName>
+                <aiAPSerialNum>
+                        <name>AP Serial</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.4</oid>
+		</aiAPSerialNum>
+		<aiAPCPUUtilization>
+                        <name>AP CPU utilization</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.7</oid>
+		</aiAPCPUUtilization>
+                <aiAPMemoryFree>
+                        <name>AP Memory free</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.8</oid>
+		</aiAPMemoryFree>
+                <aiAPTotalMemory>
+                        <name>AP Mem Total</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.10</oid>
+		</aiAPTotalMemory>
+                <aiAPStatus>
+                        <name>AP Status</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.11</oid>
+		</aiAPStatus>
+                <aiAPUptime>
+                        <name>AP Uptime</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.14823.2.3.3.1.2.1.1.9</oid>
+		</aiAPUptime>
+		
+		
+        </fields>
+</aiAPRadInfo>

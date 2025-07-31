@@ -1,0 +1,103 @@
+<interface>
+	<name>HPE iLO Drives</name>
+	<description>HPE iLO HDD, tested with iLO 4,5, original from http://relvarsoft.com/cactimon</description>
+	<oid_index>.1.3.6.1.4.1.232.3.2.5.1.1.2.0</oid_index>
+	<oid_index_parse>OID/REGEXP:.*\.([0-9]{1,2})$</oid_index_parse>
+	<index_order>cpqDaPhyDrvIndex</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+	<fields>
+		<cpqDaPhyDrvIndex>
+		<name>Drive Index</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.2.0</oid>
+		</cpqDaPhyDrvIndex>
+		<cpqDaPhyDrvBay>
+			<name>Drive Bay</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.5.0</oid>
+		</cpqDaPhyDrvBay>
+		<cpqDaPhyDrvLocationString>
+			<name>Drive Location</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.64.0</oid>
+		</cpqDaPhyDrvLocationString>
+		<cpqDaPhyDrvModel>
+			<name>Drive Vendor</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.3.0</oid>
+		</cpqDaPhyDrvModel>
+		<cpqDaPhyDrvSerialNum>
+			<name>Drive Serial Number</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.51.0</oid>
+		</cpqDaPhyDrvSerialNum>
+		<cpqDaPhyDrvSize>
+			<name>Drive Size in Mb</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.45.0</oid>
+		</cpqDaPhyDrvSize>
+		<cpqDaPhyDrvNegotiatedLinkRate>
+			<name>Drive Link Rate (1=other, 2=1.5Gbps, 3=3.0Gbps, 4=6.0Gbps, 5=12.0Gbps)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.65.0</oid>
+		</cpqDaPhyDrvNegotiatedLinkRate>
+
+		<cpqDaPhyDrvCurrentTemperature>
+			<name>Drive Current Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.70.0</oid>
+		</cpqDaPhyDrvCurrentTemperature>
+		<cpqDaPhyDrvTemperatureThreshold>
+			<name>Drive Temperature Threshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.71.0</oid>
+		</cpqDaPhyDrvTemperatureThreshold>
+		<cpqDaPhyDrvMaximumTemperature>
+			<name>Drive Maximum Temperature</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.72.0</oid>
+		</cpqDaPhyDrvMaximumTemperature>
+		<cpqDaPhyDrvStatus>
+			<name>Drive Status (1=Other, 2=Ok, 3=Failed, ... more in MIB)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.6.0</oid>
+			</cpqDaPhyDrvStatus>
+		<cpqDaPhyDrvCondition>
+			<name>Drive Condition (1=other, 2=ok, 3=degraded, 4=failed)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.37.0</oid>
+		</cpqDaPhyDrvCondition>
+		<cpqDaPhyDrvRefHours>
+			<name>Drive Reference Time in hours</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.3.2.5.1.1.9.0</oid>
+		</cpqDaPhyDrvRefHours>
+	</fields>
+</interface>

@@ -22,6 +22,12 @@
  +-------------------------------------------------------------------------+
 */
 
+// Check if Agave theme is selected and use modern footer
+if (get_selected_theme() == 'agave') {
+	include_once($config['base_path'] . '/include/themes/agave/bottom_footer.php');
+	return;
+}
+
 print "\t\t\t</main>\n\t\t</div>\n\t</div>\n";
 if (!isset_request_var('pagecontent')) {
 	api_plugin_hook('page_bottom');

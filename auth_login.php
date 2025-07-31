@@ -272,6 +272,12 @@ if (api_plugin_hook_function('custom_login', OPER_MODE_NATIVE) == OPER_MODE_RESK
 
 $selectedTheme = get_selected_theme();
 
+// Check if Agave theme is selected and use modern login
+if ($selectedTheme == 'agave') {
+	include_once(__DIR__ . '/include/themes/agave/login.php');
+	return;
+}
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

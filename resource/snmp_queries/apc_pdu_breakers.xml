@@ -1,0 +1,81 @@
+<query>
+	<name>APC PDU Branch Circuits Statistics</name>
+	<description>Collect PDU Circuit Information</description>
+	<oid_index>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.1</oid_index>
+        <index_order>Index</index_order>
+
+	<fields>
+		<Index>
+                        <name>Index</name>
+                        <source>index</source>
+                        <direction>input</direction>
+                </Index>
+
+        <BranchBreakerName>
+                <name>Name</name>
+                <method>get</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.10</oid>
+        </BranchBreakerName>
+
+	<BranchBreakerLocation>
+                <name>Location</name>
+                <method>get</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.11</oid>
+	</BranchBreakerLocation>
+
+	<BranchBreakerRating>
+		<name>Rating</name>
+		<method>get</method>
+		<source>value</source>
+		<direction>input</direction>
+		<oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.2</oid>
+	</BranchBreakerRating>
+
+	<BreakerOverCurrentThreshold>
+                <name>Over Current Threshold %</name>
+                <method>get</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.6</oid>
+        </BreakerOverCurrentThreshold>
+
+	<BreakerUnderCurrentThreshold>
+                <name>Under Current Threshold %</name>
+                <method>get</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.7</oid>
+        </BreakerUnderCurrentThreshold>
+
+	<BreakerMaxCurrentThreshold>
+                <name>Max Current Threshold %</name>
+                <method>get</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.8</oid>
+        </BreakerMaxCurrentThreshold>
+
+	<BreakerMinCurrentThreshold>
+                <name>Min Current Threshold %</name>
+                <method>get</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.9</oid>
+        </BreakerMinCurrentThreshold>
+
+	<BranchBreakerCurrent>
+                <name>Current</name>
+                <method>get</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.15.4.2.3.1.5</oid>
+        </BranchBreakerCurrent>
+
+	</fields>
+
+</query>
+	

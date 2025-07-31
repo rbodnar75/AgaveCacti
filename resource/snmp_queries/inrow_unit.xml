@@ -1,0 +1,204 @@
+<query>
+	<name>APC In-Row Unit Statistics</name>
+	<description>Collect In-Row Unit Information</description>
+	<oid_index>.1.3.6.1.2.1.7.2</oid_index>
+        <oid_index_parse>OID/REGEXP:.*\.([0-9]{1,2})$</oid_index_parse> 
+        <index_order>Index</index_order>
+        <index_order_type>alphabetic</index_order_type>
+
+	<fields>
+		<Index>
+                        <name>Index</name>
+                        <source>index</source>
+                        <direction>input</direction>
+                </Index>
+
+	<unitIdentName>
+		<name>Unit Name</name>
+		<method>walk</method>
+		<source>value</source>
+		<direction>input</direction>
+		<oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.1.2</oid>
+	</unitIdentName>
+
+	<unitIdentID>
+                <name>Unit ID</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.1.1</oid>
+        </unitIdentID>
+
+	<unitIdentLocation>
+                <name>Unit Location</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.1.3</oid>
+        </unitIdentLocation>
+
+	<unitIdentSN>
+                <name>Unit Serial Number</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>input</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.1.5</oid>
+        </unitIdentSN>
+
+	
+	<unitMaxInlet>
+		<name>Unit Maximum Rack Inlet Temp</name>
+		<method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+		<oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.2</oid>
+	</unitMaxInlet>
+
+	<unitThreshInlet>
+                <name>Unit Threshold Rack Inlet Temp</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.5.1</oid>
+        </unitThreshInlet>
+
+	<unitSupplyAir>
+                <name>Unit Supply Air Temp</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.4</oid>
+        </unitSupplyAir>
+
+	<unitThreshSupply>
+                <name>Unit Threshold Supply Air Temp</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.5.3</oid>
+        </unitThreshSupply>
+
+	<unitCoolDemand>
+                <name>Unit Cooling Demand</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.13</oid>
+        </unitCoolDemand>
+
+	<unitCoolOutput>
+                <name>Unit Cooling Output</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.14</oid>
+        </unitCoolOutput>
+
+	<unitRackInlet1>
+                <name>Unit Rack Inlet Temp 1</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.2</oid>
+        </unitRackInlet1>
+
+	<unitRackInlet2>
+                <name>Unit Rack Inlet Temp 2</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.25</oid>
+        </unitRackInlet2>
+
+	<unitRackInlet3>
+                <name>Unit Rack Inlet Temp 3</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.27</oid>
+        </unitRackInlet3>
+
+	<unitReturn>
+                <name>Unit Return Air Temp</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.6</oid>
+        </unitReturn>
+
+	<unitThreshReturn>
+                <name>Unit Threshold Return Air Temp</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.5.5</oid>
+        </unitThreshReturn>
+
+	<unitCoolDemand>
+                <name>Unit Cooling Demand</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.13</oid>
+        </unitCoolDemand>
+
+	<unitCoolOutput>
+                <name>Unit Cooling Output</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.14</oid>
+        </unitCoolOutput>
+
+	<unitEnterFluid>
+                <name>Unit Entering Fluid Temperature</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.39</oid>
+        </unitEnterFluid>
+
+	<unitThreshEntFluid>
+                <name>Unit Entering Fluid Temperature Threshold</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.5.9</oid>
+        </unitThreshEntFluid>
+
+	<unitLeaveFluid>
+                <name>Unit Leaving Fluid Temperature</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.2.41</oid>
+        </unitLeaveFluid>
+
+	<unitFanRun1>
+                <name>Unit Fan #1 Run Hours</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+		<oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.3.4</oid>        
+        </unitFanRun1>
+
+	<unitFanRun2>
+                <name>Unit Fan #2 Run Hours</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.3.6</oid>
+        </unitFanRun2>
+
+	<unitFanRun3>
+                <name>Unit Fan #3 Run Hours</name>
+                <method>walk</method>
+                <source>value</source>
+                <direction>output</direction>
+                <oid>.1.3.6.1.4.1.318.1.1.13.3.3.2.2.3.8</oid>
+        </unitFanRun3>
+
+	</fields>
+
+</query>
+	

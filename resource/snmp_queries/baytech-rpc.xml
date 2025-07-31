@@ -1,0 +1,135 @@
+<query>
+        <name>BayTech RPC Statistics</name>
+	<description>Collect RPC Statistics from BayTech PDU</description>
+        <index_order_type>numeric</index_order_type>
+	<oid_num_indexes>.1.3.6.1.4.1.4779.1.3.1.0</oid_num_indexes>
+	<oid_index>.1.3.6.1.4.1.4779.1.3.5.2.1.1</oid_index>
+
+        <fields>
+		<Index>
+                        <name>Index</name>
+                        <source>index</source>
+                        <direction>input</direction>
+                </Index>
+                <rpcName>
+                        <name>Name</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.2</oid>
+                </rpcName>
+		<rpcFirmware>
+			<name>Firmware</name>
+			<method>get</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.4779.1.3.5.2.1.3</oid>
+		</rpcFirmware>
+		<rpcCurrent>
+			<name>Current</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.4779.1.3.5.2.1.4</oid>
+		</rpcCurrent>
+                <rpcMaxCurrent>
+                        <name>Max Current</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.5</oid>
+                </rpcMaxCurrent>
+		<rpcVoltage>
+                        <name>Voltage</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.6</oid>
+                </rpcVoltage>
+                <rpcPower>
+                        <name>Power</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.7</oid>
+                </rpcPower>
+		<rpcTemperature>
+                        <name>Temperature</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.8</oid>
+                </rpcTemperature>
+                <rpcCurrentAlarmThreshold>
+                        <name>Current Alarm Threshold</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.12</oid>
+                </rpcCurrentAlarmThreshold>
+                <rpcOverVoltageThreshold>
+                        <name>Over Voltage Threshold</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.13</oid>
+                </rpcOverVoltageThreshold>
+		<rpcUnderVoltageThreshold>
+                        <name>Under Voltage Threshold</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.14</oid>
+                </rpcUnderVoltageThreshold>
+		<rpcOverTempThreshold>
+                        <name>Over Temperature Threshold</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.17</oid>
+                </rpcOverTempThreshold>
+		<rpcUnitVA>
+                        <name>Unit Volt-Amps</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.18</oid>
+                </rpcUnitVA>
+		<rpcNumberOfCircuits>
+                        <name>Circuits</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.19</oid>
+                </rpcNumberOfCircuits>
+		<rpcType>
+                        <name>Type</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.24</oid>
+                </rpcType>
+		<rpcKWHours>
+                        <name>Kilo-Watt Hours</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.25</oid>
+                </rpcKWHours>
+		<rpcInputSources>
+                        <name>Input Sources</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.26</oid>
+                </rpcInputSources>
+		<rpcInputPhases>
+                        <name>Input Phases</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.4779.1.3.5.2.1.27</oid>
+                </rpcInputPhases>
+        </fields>
+
+</query> 

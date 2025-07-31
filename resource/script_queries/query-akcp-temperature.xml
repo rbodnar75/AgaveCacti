@@ -1,0 +1,63 @@
+<query>
+        <name>Get AKCP Temperature Statistics</name>
+        <script_path>|path_php_binary| -q  |path_cacti|/scripts/query_akcp_temperature.php</script_path>
+        <arg_prepend>|host_hostname| |host_snmp_community| |host_snmp_version| |host_snmp_port| |host_snmp_timeout| |host_max_oids| "|host_snmp_username|" "|host_snmp_password|" "|host_snmp_auth_protocol|" "|host_snmp_priv_passphrase|" "|host_snmp_priv_protocol|" "|host_snmp_context|"</arg_prepend>
+        <arg_index>index</arg_index>
+        <arg_query>query</arg_query>
+        <arg_get>get</arg_get>
+        <output_delimeter>!</output_delimeter>
+
+        <fields>
+                <index>
+                        <name>Index</name>
+                        <direction>input</direction>
+                        <query_name>index</query_name>
+                </index>
+		<sensorProbeTempDescription>
+			<name>Description</name>
+			<direction>input</direction>
+			<query_name>sensorProbeTempDescription</query_name>
+		</sensorProbeTempDescription>
+		<sensorProbeSensorType>
+			<name>Type</name>
+			<direction>input</direction>
+			<query_name>sensorProbeSensorType</query_name>
+		</sensorProbeSensorType>
+		<sensorProbeTempStatus>
+			<name>Status</name>
+			<direction>input</direction>
+			<query_name>sensorProbeTempStatus</query_name>
+		</sensorProbeTempStatus>
+		<sensorProbeTempOnline>
+                        <name>Online</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeTempOnline</query_name>
+                </sensorProbeTempOnline>
+                <sensorProbeTempHighWarning>
+                        <name>HighWarning</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeTempHighWarning</query_name>
+                </sensorProbeTempHighWarning>
+		<sensorProbeTempHighCritical>
+                        <name>HighCritical</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeTempHighCritical</query_name>
+                </sensorProbeTempHighCritical>
+		<sensorProbeTempLowWarning>
+                        <name>LowWarning</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeTempLowWarning</query_name>
+                </sensorProbeTempLowWarning>
+		<sensorProbeTempLowCritical>
+                        <name>LowCritical</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeTempLowCritical</query_name>
+                </sensorProbeTempLowCritical>
+		<sensorProbeTempDegreeRaw>
+                        <name>TempDegreeRaw</name>
+                        <direction>output</direction>
+                        <query_name>sensorProbeTempDegreeRaw</query_name>
+                </sensorProbeTempDegreeRaw>	
+        </fields>
+</query>
+

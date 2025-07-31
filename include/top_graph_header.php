@@ -27,6 +27,12 @@ $using_guest_account = false;
 
 $page_title = api_plugin_hook_function('page_title', draw_navigation_text('title'));
 
+// Check if Agave theme is selected and use modern header
+if (get_selected_theme() == 'agave') {
+	include_once($config['base_path'] . '/include/themes/agave/top_header.php');
+	return;
+}
+
 if (!isset_request_var('headercontent')) {?>
 <!DOCTYPE html>
 <html lang='<?php print CACTI_LOCALE;?>'>

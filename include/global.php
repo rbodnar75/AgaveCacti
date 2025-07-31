@@ -57,10 +57,10 @@ define('CACTI_DOCUMENTATION_TOC', 'docs/Table-of-Contents.html');
 
 /* Default database settings*/
 $database_type     = 'mysql';
-$database_default  = 'cacti';
+$database_default  = 'cactidb';
 $database_hostname = 'localhost';
 $database_username = 'cactiuser';
-$database_password = 'cactiuser';
+$database_password = 'password';
 $database_port     = '3306';
 $database_retries  = 2;
 

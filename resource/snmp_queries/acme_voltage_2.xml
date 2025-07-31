@@ -1,0 +1,38 @@
+<interface>
+	<name>Get ACME Voltage</name>
+	<description>Queries an ACME SD for a list of Voltage paramse</description>
+	<oid_index>.1.3.6.1.4.1.9148.3.3.1.2.1.1.2</oid_index>
+	<index_order>VoltageStatusType:VoltageStatusDescr</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+	<fields>
+		<VoltageStatusType>	
+			<name>Type</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.2.1.1.2</oid>
+		</VoltageStatusType>
+		<VoltageStatusDescr>
+			<name>Descr</name>
+			<method>get</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.2.1.1.3</oid>
+		</VoltageStatusDescr>
+		<VoltageStatusValue>
+			<name>Value</name>
+			<method>get</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.2.1.1.4</oid>
+		</VoltageStatusValue>
+		<VoltageState>
+			<name>State</name>
+			<method>get</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.2.1.1.5</oid>
+		</VoltageState>
+	</fields>
+</interface>

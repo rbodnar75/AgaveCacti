@@ -1,0 +1,60 @@
+<interface>
+	<name>HPE iLO Temperatures</name>
+	<description>HPE iLO Temperatures, tested with iLO 4,5, original from http://relvarsoft.com/cactimon</description>
+	<oid_index>.1.3.6.1.4.1.232.6.2.6.8.1.2</oid_index>
+	<index_order>cpqHeTemperatureChassis:cpqHeTemperatureIndex</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+	<fields>
+		<cpqHeTemperatureIndex>
+			<name>Temperature Sensor Index</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.8.1.2.0</oid>
+		</cpqHeTemperatureIndex>
+		<cpqHeTemperatureChassis>
+			<name>Chassis Number (only =0 supported)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.8.1.1.0</oid>
+		</cpqHeTemperatureChassis>
+		<cpqHeTemperatureLocale>
+			<name>Temperature Sensor Locale (4=systemBoard, 6=cpu, 7=memory, ... more in MIB)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.8.1.3.0</oid>
+		</cpqHeTemperatureLocale>
+		<cpqHeTemperatureThresholdType>
+			<name>Threshold Type (1=other, 5=blowout, 9=caution, 15=critical, 16=noreaction)</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.8.1.7.0</oid>
+		</cpqHeTemperatureThresholdType>
+
+		<cpqHeTemperatureCelsius>
+			<name>cpqHeTemperatureCelsius</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.8.1.4.0</oid>
+		</cpqHeTemperatureCelsius>
+		<cpqHeTemperatureThreshold>
+			<name>cpqHeTemperatureThreshold</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.8.1.5.0</oid>
+		</cpqHeTemperatureThreshold>
+		<cpqHeTemperatureCondition>
+			<name>cpqHeTemperatureCondition</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.232.6.2.6.8.1.6.0</oid>
+		</cpqHeTemperatureCondition>
+	</fields>
+</interface>

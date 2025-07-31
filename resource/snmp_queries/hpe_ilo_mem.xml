@@ -1,0 +1,75 @@
+<interface>
+	<name>HPE iLO Memory</name>
+        <description>HPE iLO Memory, tested with iLO 4,5, original from http://relvarsoft.com/cactimon</description>
+        <oid_index>.1.3.6.1.4.1.232.6.2.14.13.1.1</oid_index>
+        <oid_index_parse>OID/REGEXP:.*\.([0-9]{1,2})$</oid_index_parse>
+        <index_order>cpqHeResMem2Module</index_order>
+        <index_order_type>numeric</index_order_type>
+        <index_title_format>|chosen_order_field|</index_title_format>
+        <fields>
+               <cpqHeResMem2Module>
+                    <name>Memory Index</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>input</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.1</oid>
+               </cpqHeResMem2Module>
+               <cpqHeResMem2ModuleHwLocation>
+                    <name>Location</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>input</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.13</oid>
+               </cpqHeResMem2ModuleHwLocation>
+               <cpqHeResMem2ModuleManufacturer>
+                    <name>Manufacturer</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>input</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.9</oid>
+               </cpqHeResMem2ModuleManufacturer>
+               <cpqHeResMem2ModulePartNo>
+                    <name>Part Number</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>input</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.10</oid>
+               </cpqHeResMem2ModulePartNo>
+               <cpqHeResMem2ModuleSize>
+                    <name>Size in Kbytes</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>input</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.6</oid>
+               </cpqHeResMem2ModuleSize>
+               <cpqHeResMem2ModuleTechnology>
+                    <name>Memory Technology (1=other, 2=fastPageMode, 3=edoPageMode, ... more in MIB)</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>input</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.8</oid>
+               </cpqHeResMem2ModuleTechnology>
+               <cpqHeResMem2ModuleType>
+                    <name>Memory Type (1=other, 2=board, 8=dimm, ... more in MIB)</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>input</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.7</oid>
+               </cpqHeResMem2ModuleType>
+
+               <cpqHeResMem2ModuleStatus>
+                    <name>Memory status (1=other, 2=notPresent, 3=present, 4=good, ... more in MIB)</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>output</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.19</oid>
+               </cpqHeResMem2ModuleStatus>
+               <cpqHeResMem2ModuleCondition>
+                    <name>Memory condition (1=other, 2=ok, 3=degraded, 4=degradedModuleIndexUnknown)</name>
+                    <method>walk</method>
+                    <source>value</source>
+                    <direction>output</direction>
+                    <oid>.1.3.6.1.4.1.232.6.2.14.13.1.20</oid>
+               </cpqHeResMem2ModuleCondition>
+        </fields>
+</interface>

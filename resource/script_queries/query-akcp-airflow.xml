@@ -1,0 +1,68 @@
+<query>
+        <name>Get AKCP Airflow Statistics</name>
+        <script_path>|path_php_binary| -q  |path_cacti|/scripts/query_akcp_airflow.php</script_path>
+        <arg_prepend>|host_hostname| |host_snmp_community| |host_snmp_version| |host_snmp_port| |host_snmp_timeout| |host_max_oids| "|host_snmp_username|" "|host_snmp_password|" "|host_snmp_auth_protocol|" "|host_snmp_priv_passphrase|" "|host_snmp_priv_protocol|" "|host_snmp_context|"</arg_prepend>
+        <arg_index>index</arg_index>
+        <arg_query>query</arg_query>
+        <arg_get>get</arg_get>
+        <output_delimeter>!</output_delimeter>
+
+        <fields>
+                <index>
+                        <name>Index</name>
+                        <direction>input</direction>
+                        <query_name>index</query_name>
+                </index>
+		<sensorProbeHumidityDescription>
+			<name>Description</name>
+			<direction>input</direction>
+			<query_name>sensorProbeHumidityDescription</query_name>
+		</sensorProbeHumidityDescription>
+		<sensorProbeSensorType>
+			<name>Type</name>
+			<direction>input</direction>
+			<query_name>sensorProbeSensorType</query_name>
+		</sensorProbeSensorType>
+		<sensorProbeHumidityStatus>
+			<name>Status</name>
+			<direction>input</direction>
+			<query_name>sensorProbeHumidityStatus</query_name>
+		</sensorProbeHumidityStatus>
+		<sensorProbeHumidityOnline>
+                        <name>Online</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeHumidityOnline</query_name>
+                </sensorProbeHumidityOnline>
+                <sensorProbeHumidityHighWarning>
+                        <name>HighWarning</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeHumidityHighWarning</query_name>
+                </sensorProbeHumidityHighWarning>
+		<sensorProbeHumidityHighCritical>
+                        <name>HighCritical</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeHumidityHighCritical</query_name>
+                </sensorProbeHumidityHighCritical>
+		<sensorProbeHumidityLowWarning>
+                        <name>LowWarning</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeHumidityLowWarning</query_name>
+                </sensorProbeHumidityLowWarning>
+		<sensorProbeHumidityLowCritical>
+                        <name>LowCritical</name>
+                        <direction>input</direction>
+                        <query_name>sensorProbeHumidityLowCritical</query_name>
+                </sensorProbeHumidityLowCritical>
+		<sensorProbeHumidityPercent>
+                        <name>HumidityPercent</name>
+                        <direction>output</direction>
+                        <query_name>sensorProbeHumidityPercent</query_name>
+                </sensorProbeHumidityPercent>
+		<sensorProbeHumidityRaw>
+                        <name>HumidityRaw</name>
+                        <direction>output</direction>
+                        <query_name>sensorProbeHumidityRaw</query_name>
+                </sensorProbeHumidityRaw>
+        </fields>
+</query>
+

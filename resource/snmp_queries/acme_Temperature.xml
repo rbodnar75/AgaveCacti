@@ -1,0 +1,38 @@
+<interface>
+	<name>walk ACME Temperature</name>
+	<description>Queries an ACME SD for a Temperature</description>
+	<oid_index>.1.3.6.1.4.1.9148.3.3.1.3.1.1.2</oid_index>
+	<index_order>TempStatusType</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+	<fields>
+		<TempStatusType>	
+			<name>Type</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.3.1.1.2</oid>
+		</TempStatusType>
+		<TempStatusDescr>
+			<name>Descr</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.3.1.1.3</oid>
+		</TempStatusDescr>
+		<TempStatusValue>
+			<name>Value</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.3.1.1.4</oid>
+		</TempStatusValue>
+		<TempState>
+			<name>State</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.9148.3.3.1.3.1.1.5</oid>
+		</TempState>
+	</fields>
+</interface>
