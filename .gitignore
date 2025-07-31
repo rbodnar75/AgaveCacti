@@ -62,8 +62,10 @@ plugins/**
 # Ignore Cacti script files/folders
 scripts/**
 
-# Ignore Custom Cacti theme folders
+# Ignore Custom Cacti theme folders (except agave)
 include/themes/*
+!include/themes/agave/
+!include/themes/agave/**
 
 # Ignore custom stylesheet (applied on all themes)
 include/themes/custom.css

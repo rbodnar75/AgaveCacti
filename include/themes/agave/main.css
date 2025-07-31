@@ -1,0 +1,667 @@
+/* Agave Theme - Modern Cacti Interface with High Contrast Colors */
+:root {
+    /* High Contrast Color System */
+    --primary-color: #1e40af;
+    --primary-50: #eff6ff;
+    --primary-100: #dbeafe;
+    --primary-200: #bfdbfe;
+    --primary-300: #93c5fd;
+    --primary-400: #60a5fa;
+    --primary-500: #3b82f6;
+    --primary-600: #2563eb;
+    --primary-700: #1d4ed8;
+    --primary-800: #1e3a8a;
+    --primary-900: #1e40af;
+    
+    /* High Contrast Gray Scale */
+    --gray-50: #ffffff;
+    --gray-100: #f8fafc;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+    
+    /* Status Colors with Better Contrast */
+    --success-50: #f0fdf4;
+    --success-100: #dcfce7;
+    --success-500: #22c55e;
+    --success-600: #16a34a;
+    --success-700: #15803d;
+    --warning-50: #fffbeb;
+    --warning-100: #fef3c7;
+    --warning-500: #f59e0b;
+    --warning-600: #d97706;
+    --warning-700: #b45309;
+    --error-50: #fef2f2;
+    --error-100: #fee2e2;
+    --error-500: #ef4444;
+    --error-600: #dc2626;
+    --error-700: #b91c1c;
+    
+    /* Text Colors for High Contrast */
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+    --text-inverse: #ffffff;
+    
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-dark: #1e293b;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+    --spacing-2xl: 2rem;
+    --spacing-3xl: 3rem;
+    
+    /* Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.375rem;
+    --border-radius-lg: 0.5rem;
+    --border-radius-xl: 0.75rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Layout */
+    --sidebar-width: 280px;
+    --header-height: 64px;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+}
+
+/* Reset and Base Styles */
+.agave-theme * {
+    box-sizing: border-box;
+}
+
+.agave-theme body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Layout Container */
+.agave-layout {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Header */
+.agave-header {
+    background: var(--bg-primary);
+    border-bottom: 2px solid var(--gray-200);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-lg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.agave-header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.agave-header-brand h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.agave-logo {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-600);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--text-inverse);
+    font-weight: bold;
+}
+
+.agave-mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--gray-300);
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition-fast);
+}
+
+.agave-mobile-menu-toggle:hover {
+    background: var(--gray-100);
+    color: var(--text-primary);
+    border-color: var(--gray-400);
+}
+
+.agave-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.agave-user-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Sidebar Navigation */
+.agave-sidebar {
+    background: var(--bg-primary);
+    width: var(--sidebar-width);
+    border-right: 2px solid var(--gray-200);
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    bottom: 0;
+    z-index: 900;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.agave-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.agave-nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.agave-nav-header {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.agave-nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-fast);
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+}
+
+.agave-nav-item:hover {
+    background: var(--primary-50);
+    color: var(--primary-700);
+    text-decoration: none;
+    border-color: var(--primary-200);
+}
+
+.agave-nav-item.active {
+    background: var(--primary-100);
+    color: var(--primary-800);
+    font-weight: 600;
+    border-color: var(--primary-300);
+}
+
+.agave-nav-icon {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Main Content Area */
+.agave-main {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+    min-height: calc(100vh - var(--header-height));
+    padding: 0;
+    background: var(--bg-secondary);
+}
+
+.agave-breadcrumb {
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--gray-200);
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.agave-content {
+    padding: var(--spacing-xl);
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Button Styles */
+.agave-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.agave-btn-primary {
+    background: var(--primary-600);
+    border-color: var(--primary-600);
+    color: var(--text-inverse);
+}
+
+.agave-btn-primary:hover {
+    background: var(--primary-700);
+    border-color: var(--primary-700);
+    color: var(--text-inverse);
+    text-decoration: none;
+}
+
+.agave-btn-secondary {
+    background: var(--bg-primary);
+    border-color: var(--gray-400);
+    color: var(--text-secondary);
+}
+
+.agave-btn-secondary:hover {
+    background: var(--gray-100);
+    border-color: var(--gray-500);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .agave-mobile-menu-toggle {
+        display: block;
+    }
+    
+    .agave-sidebar {
+        transform: translateX(-100%);
+        transition: transform var(--transition-normal);
+        width: var(--sidebar-width);
+        z-index: 1100;
+    }
+    
+    .agave-sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .agave-main {
+        margin-left: 0;
+    }
+    
+    .agave-overlay {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.75);
+        z-index: 998;
+    }
+    
+    .agave-overlay.active {
+        display: block;
+    }
+}
+
+/* Override default Cacti styles for Agave theme */
+.agave-theme #main {
+    display: block !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.agave-theme body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-secondary);
+    overflow-x: auto;
+}
+
+.agave-theme .cactiPageHead,
+.agave-theme .breadCrumbBar,
+.agave-theme .cactiShadow {
+    display: none !important;
+}
+
+.agave-theme .cactiContent {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+}
+
+/* Fix tables and forms in Agave theme */
+.agave-theme .cactiTable,
+.agave-theme table.cactiTable {
+    background: var(--bg-primary);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.agave-theme .cactiTable th,
+.agave-theme table.cactiTable th {
+    background: var(--gray-100);
+    color: var(--text-primary);
+    font-weight: 700;
+    padding: var(--spacing-md);
+    border-bottom: 2px solid var(--gray-300);
+    font-size: 0.875rem;
+}
+
+.agave-theme .cactiTable td,
+.agave-theme table.cactiTable td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.agave-theme .cactiTable tr:last-child td,
+.agave-theme table.cactiTable tr:last-child td {
+    border-bottom: none;
+}
+
+.agave-theme .cactiTable tr:hover,
+.agave-theme table.cactiTable tr:hover {
+    background: var(--gray-50);
+}
+
+.agave-theme .cactiTable tr:hover td,
+.agave-theme table.cactiTable tr:hover td {
+    color: var(--text-primary);
+}
+
+/* Forms */
+.agave-theme input[type="text"],
+.agave-theme input[type="password"],
+.agave-theme input[type="email"],
+.agave-theme input[type="number"],
+.agave-theme select,
+.agave-theme textarea {
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    transition: var(--transition-fast);
+    font-weight: 500;
+}
+
+.agave-theme input[type="text"]:focus,
+.agave-theme input[type="password"]:focus,
+.agave-theme input[type="email"]:focus,
+.agave-theme input[type="number"]:focus,
+.agave-theme select:focus,
+.agave-theme textarea:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+/* Buttons */
+.agave-theme input[type="submit"],
+.agave-theme input[type="button"],
+.agave-theme button {
+    background: var(--primary-600);
+    color: var(--text-inverse);
+    border: 2px solid var(--primary-600);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.agave-theme input[type="submit"]:hover,
+.agave-theme input[type="button"]:hover,
+.agave-theme button:hover {
+    background: var(--primary-700);
+    border-color: var(--primary-700);
+}
+
+/* Graph Display Fixes */
+.agave-theme .cactiGraphContentArea,
+.agave-theme .cactiGraphContentAreaPreview {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 var(--spacing-lg) 0 !important;
+    padding: var(--spacing-lg) !important;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--gray-300);
+}
+
+.agave-theme .graphWrapper,
+.agave-theme .graphContainer {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center;
+    background: var(--bg-primary);
+}
+
+.agave-theme .graphimage {
+    display: inline-block !important;
+    visibility: visible !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Force visibility for hidden graph elements */
+.agave-theme img[src*="graph_image.php"],
+.agave-theme img[src*="graph.php"] {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Ensure graph containers are visible */
+.agave-theme div[id*="wrapper_"],
+.agave-theme div[id*="graph_"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Tree view graph fixes */
+.agave-theme .cactiTreeNavigationArea {
+    display: none !important;
+}
+
+.agave-theme .cactiContentNavigationArea {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: var(--spacing-lg);
+}
+
+/* Override any display:none on graph content */
+.agave-theme [id*="graph"],
+.agave-theme [class*="graph"] {
+    display: block !important;
+}
+
+/* Pagination */
+.agave-theme .navBar {
+    background: var(--bg-primary);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border: 2px solid var(--gray-300);
+    margin: var(--spacing-lg) 0;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.agave-theme .navBar a {
+    color: var(--primary-600);
+    font-weight: 600;
+}
+
+.agave-theme .navBar a:hover {
+    color: var(--primary-700);
+    text-decoration: underline;
+}
+
+/* Messages */
+.agave-theme .cactiMessage {
+    background: var(--primary-50);
+    color: var(--primary-800);
+    border: 2px solid var(--primary-300);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    font-weight: 600;
+}
+
+.agave-theme .cactiErrorMessage {
+    background: var(--error-50);
+    color: var(--error-800);
+    border: 2px solid var(--error-300);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    font-weight: 600;
+}
+
+.agave-theme .cactiWarningMessage {
+    background: var(--warning-50);
+    color: var(--warning-800);
+    border: 2px solid var(--warning-300);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    font-weight: 600;
+}
+
+/* Link Styling */
+.agave-theme a {
+    color: var(--primary-600);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.agave-theme a:hover {
+    color: var(--primary-700);
+    text-decoration: underline;
+}
+
+.agave-theme a:visited {
+    color: var(--primary-700);
+}
+
+/* List styling */
+.agave-theme ul,
+.agave-theme ol {
+    color: var(--text-secondary);
+}
+
+.agave-theme li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Code and pre styling */
+.agave-theme code,
+.agave-theme pre {
+    background: var(--gray-100);
+    color: var(--text-primary);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.agave-theme pre {
+    padding: var(--spacing-md);
+    overflow-x: auto;
+}
+
+/* Print media */
+@media print {
+    .agave-header,
+    .agave-sidebar,
+    .agave-breadcrumb {
+        display: none !important;
+    }
+    
+    .agave-main {
+        margin: 0 !important;
+    }
+    
+    .agave-content {
+        padding: 0 !important;
+    }
+}
